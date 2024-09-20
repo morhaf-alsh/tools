@@ -41,11 +41,16 @@ document.getElementById('subnet-form').addEventListener('submit', function(event
     const results = calculateSubnet(ip, cidr);
 
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = `
-        <p><strong>Network Address:</strong> ${results.networkAddress}</p>
-        <p><strong>Broadcast Address:</strong> ${results.broadcastAddress}</p>
-        <p><strong>First Usable IP:</strong> ${results.firstUsableIP}</p>
-        <p><strong>Last Usable IP:</strong> ${results.lastUsableIP}</p>
-        <p><strong>Subnet Mask:</strong> ${results.subnetMask}</p>
-    `;
-});
+    // resultsDiv.innerHTML = `
+    //     <p><strong>Network Address:</strong> ${results.networkAddress}</p>
+    //     <p><strong>Broadcast Address:</strong> ${results.broadcastAddress}</p>
+    //     <p><strong>First Usable IP:</strong> ${results.firstUsableIP}</p>
+    //     <p><strong>Last Usable IP:</strong> ${results.lastUsableIP}</p>
+    //     <p><strong>Subnet Mask:</strong> ${results.subnetMask}</p>
+    // `;
+    const NAIP = document.getElementById("NA").innerHTML=`${results.networkAddress}`;
+    const BAIP = document.getElementById("BA").innerHTML=`${results.broadcastAddress}`;
+    const FUIP = document.getElementById("FU").innerHTML=`${results.firstUsableIP}`;
+    const LUIP = document.getElementById("LU").innerHTML=`${results.lastUsableIP}`;
+    const SMIP = document.getElementById("SM").innerHTML=`${results.subnetMask}`;
+})
