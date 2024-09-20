@@ -13,16 +13,23 @@ input, button {
     margin: 10px 0;
 }
 button {
+    width: 105%;
     background-color: #4CAF50;
     color: white;
     border: none;
+    margin-left: 0;
 }
 .results {
     margin-top: 20px;
 }
 .results p {
+    width: 100%;
     font-size: 16px;
     background-color: #f4f4f4;
     padding: 10px;
     border: 1px solid #ddd;
+}
+
+p{
+    min-height: 18px;
 }
