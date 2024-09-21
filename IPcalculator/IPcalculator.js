@@ -1,14 +1,14 @@
 function calculateSubnet(ip, cidr) {
     const ipParts = ip.split('.').map(part => parseInt(part));
     const subnetMask = -1 << (32 - cidr);
-    console.log("subnetMask:" + subnetMask)
+    console.log(subnetMask)
     const subnetMaskParts = [
         (subnetMask >>> 24) & 255,
         (subnetMask >>> 16) & 255,
         (subnetMask >>> 8) & 255,
         subnetMask & 255
     ];
-    console.log("subnetMaskParts" + subnetMaskParts)
+
 
     // Calculate the network address
     const networkAddressParts = ipParts.map((part, index) => part & subnetMaskParts[index]);
