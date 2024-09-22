@@ -8,7 +8,8 @@ function calculateSubnet(ip, cidr) {
         (subnetMask >>> 8) & 255,
         subnetMask & 255
     ];
-
+    // calculate the number of usable IP Address
+    const numberOfIPs =  (2 ** (32 - cidr)) - 2;
 
     // Calculate the network address
     const networkAddressParts = ipParts.map((part, index) => part & subnetMaskParts[index]);
@@ -24,6 +25,7 @@ function calculateSubnet(ip, cidr) {
     lastUsableIPParts[3] -= 1; // Last usable IP is broadcast address - 1
 
     return {
+        numberOfIPs: numberOfIPs,
         networkAddress: networkAddressParts.join('.'),
         broadcastAddress: broadcastAddressParts.join('.'),
         firstUsableIP: firstUsableIPParts.join('.'),
@@ -37,7 +39,6 @@ document.getElementById('subnet-form').addEventListener('submit', function(event
 
     const ip = document.getElementById('ip').value;
     const cidr = parseInt(document.getElementById('cidr').value);
-
     const results = calculateSubnet(ip, cidr);
 
     const resultsDiv = document.getElementById('results');
@@ -48,9 +49,11 @@ document.getElementById('subnet-form').addEventListener('submit', function(event
     //     <p><strong>Last Usable IP:</strong> ${results.lastUsableIP}</p>
     //     <p><strong>Subnet Mask:</strong> ${results.subnetMask}</p>
     // `;
+    const NIP = document.getElementById("NIP").innerHTML= `${results.numberOfIPs}`;
     const NAIP = document.getElementById("NA").innerHTML=`${results.networkAddress}`;
     const BAIP = document.getElementById("BA").innerHTML=`${results.broadcastAddress}`;
     const FUIP = document.getElementById("FU").innerHTML=`${results.firstUsableIP}`;
     const LUIP = document.getElementById("LU").innerHTML=`${results.lastUsableIP}`;
     const SMIP = document.getElementById("SM").innerHTML=`${results.subnetMask}`;
 })
+

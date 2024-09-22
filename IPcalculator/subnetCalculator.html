@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>IP Subnet Calculator</h1>
+        <h1>IP v4 Subnet Calculator</h1>
         <form id="subnet-form">
             <label for="ip">IP Address:</label>
             <input type="text" id="ip" placeholder="Enter IP Address (e.g., 192.168.1.1)" required>
@@ -21,6 +21,8 @@
         </form>
 
         <div class="results" id="results">
+            <label><strong>Number of Usable IP Addresses:</strong></label>
+            <p id="NIP"></p>
             <label><strong>Network Address:</strong></label>
             <p id="NA"></p>
             <label><strong>Broadcast Address:</strong></label>
