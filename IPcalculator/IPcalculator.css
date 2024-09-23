@@ -7,6 +7,9 @@ body {
     max-width: 500px;
     margin: auto;
 }
+
+
+
 input, button {
     width: 100%;
     padding: 10px;
@@ -19,6 +22,14 @@ button {
     border: none;
     margin-left: 0;
 }
+input:user-valid{
+    border: 3px solid green;
+}
+
+input:user-invalid {
+    border: 3px solid red;
+}
+
 .results {
     margin-top: 20px;
 }

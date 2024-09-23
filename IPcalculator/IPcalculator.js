@@ -1,7 +1,6 @@
 function calculateSubnet(ip, cidr) {
     const ipParts = ip.split('.').map(part => parseInt(part));
     const subnetMask = -1 << (32 - cidr);
-    console.log(subnetMask)
     const subnetMaskParts = [
         (subnetMask >>> 24) & 255,
         (subnetMask >>> 16) & 255,
@@ -56,4 +55,6 @@ document.getElementById('subnet-form').addEventListener('submit', function(event
     const LUIP = document.getElementById("LU").innerHTML=`${results.lastUsableIP}`;
     const SMIP = document.getElementById("SM").innerHTML=`${results.subnetMask}`;
 })
+
+
 
