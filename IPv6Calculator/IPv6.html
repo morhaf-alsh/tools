@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPv6 Subnet Calculator</title>
+  <link rel="stylesheet" href="IPv6.css">
+</head>
+<body>
+  <div class="container">
+    <h1>IPv6 Subnet Calculator</h1>
+
+    <form id="ipv6Form">
+      <div class="input-group">
+        <label for="ipv6Address">IPv6 Address:</label>
+        <input type="text" id="ipv6Address" placeholder="2001:0db8:85a3::">
+      </div>
+
+      <div class="input-group">
+        <label for="prefixLength">Prefix Length (CIDR):</label>
+        <input type="number" id="prefixLength" placeholder="/64" min="0" max="128">
+      </div>
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    <div id="results" class="results hidden">
+      <h2>Results</h2>
+      <p><strong>Network Address:</strong> <span id="networkAddress"></span></p>
+      <p><strong>Subnet Mask:</strong> <span id="subnetMask"></span></p>
+      <p><strong>First Usable Address:</strong> <span id="firstUsable"></span></p>
+      <p><strong>Last Usable Address:</strong> <span id="lastUsable"></span></p>
+      <p><strong>Total Addresses:</strong> <span id="totalAddresses"></span></p>
+    </div>
+  </div>
+
+  <script src="IPv6.js"></script>
+</body>
+</html>
